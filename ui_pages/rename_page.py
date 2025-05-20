@@ -169,7 +169,7 @@ class RenamePage(QWidget):
                 image = convert_from_path(path, first_page=1, last_page=1)[0]
                 text = pytesseract.image_to_string(image)
 
-                match = re.search(r"(CA\-MOOE\S+|MOOE\S+|PGF\S+)", text)
+                match = re.search(r"(CA\-MOOE\S+|MOOE\S+|PGF\S+|PS\S+)", text)
                 if match:
                     serial = match.group(1).strip()
                     new_name = f"{serial}.pdf"
